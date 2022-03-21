@@ -83,10 +83,10 @@
 
 <div class="col-md-5 peraturan">
     <ol type="1">
-        <li>Pengambilan barang harus disertai nota</li>
-        <li>Penyelesaian cucian maksimal 3 hari</li>
-        <li>Barang yang tidak diambil selama 1 bulan, jika hilang bukan tanggung jawab kami</li>
-        <li>Apabila terjadi kehilangan atau cacat karena kelalaian kami, kami hanya bertanggung jawab 2kali ongkos cuci</li>
+        <li>Nota wajib dibawa saat pengambilan</li>
+        <li>Customer wajib memastikan bahwa laundry sudah benar</li>
+        <li>Barang yang tidak di ambil atau di titipkan lebih dari 14 hari bukan tanggung jawab kami lagi</li>
+        <li>Jika terjadi kerusakan yang di akibatkan oleh kami, customer berhak mendapat ganti rugi</li>
     </ol>
 </div>
 
@@ -127,9 +127,5 @@
 </div>
 </div>
 <br>
-<center>
-    <a href="{{route('tampil-transaksi')}}" class="btn btn-danger">Back</a>
-    <button id="cetak" class="btn btn-primary" onclick="window.print()">Cetak</button>
-</center>
 </body>
 </html>

@@ -22,7 +22,7 @@
                     <div class="col-12 col-md-12 col-lg-12">
                       <div class="card">
                         <div class="card-header">
-                          <h4>Tambah Data Pengurus</h4>
+                          <h4>Kelola Akun</h4>
                         </div>
                         <form action="{{route ('simpan-user')}}" method="POST">
                           @csrf
@@ -86,8 +86,8 @@
                           </label>
                           </div>
                           
-                          <button class="btn btn-primary" type="submit">Tambah</button>
-                          <button class="btn btn-secondary" type="reset">Reset</button>
+                          <button class="btn btn-success btn-gradient" type="submit">Tambah</button>
+                          <button class="btn btn-danger btn-gradient" type="reset">Reset</button>
                         
                         </form>
                   </div>

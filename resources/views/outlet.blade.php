@@ -2,7 +2,7 @@
 @section('navigasi')
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-black" href="{{route('dashboard')}}">Pages</a></li>
+    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-black" href="{{route('dashboard')}}">Dashboard</a></li>
     <li class="breadcrumb-item text-sm text-black active" aria-current="page">Outlet</li>
   </ol>
   <h6 class="font-weight-bolder text-black mb-0">Data Outlet</h6>
@@ -71,7 +71,7 @@
                                     <p class="text-s font-weight-bold mb-0">{{$i=$no+1, $i++}}</p>
                                   </td>
                                   <td class="text-center">
-                                    <span class="badge badge-sm bg-gradient-secondary ">{{$data->nama}}</span>
+                                    <span class="badge badge-sm bg-gradient-info ">{{$data->nama}}</span>
                                   </td>
                                   <td class="align-middle text-center text-sm">
                                     <p class="text-xs font-weight-bold mb-0">{{$data->alamat}}</p>

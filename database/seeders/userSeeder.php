@@ -24,13 +24,6 @@ class userSeeder extends Seeder
             'password' => bcrypt('12345'),
             'remember_token' => Str::random(60),
             ],
-            [
-                'name' => 'gibran',
-                'role' => 'kasir',
-                'email' => 'gibran@kasir.com',
-                'password' => bcrypt('12345'),
-                'remember_token' => Str::random(60),
-            ]
         ]);
     }
 }

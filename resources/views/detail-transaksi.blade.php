@@ -17,6 +17,7 @@
 @stop
 @section('content')
     <div class="section-body">
+      <div class="container-fluid py-4">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
                 <div class="row">
@@ -74,8 +75,8 @@
 
                         </div>
                         <div class="card-footer text-left">
-                          <a href="{{route('tampil-transaksi')}}" class="btn btn-primary">Back</a>
-                          <a href="{{route('laporan',$transaksi->id)}}" class="btn btn-success">Generate Laporan</a>
+                          <a href="{{route('tampil-transaksi')}}" class="btn btn-danger btn-gradient">Back</a>
+                          <a href="{{route('laporan',$transaksi->id)}}" class="btn btn-success btn-gradient">Generate Laporan</a>
                         </div>
 
                       </div>                

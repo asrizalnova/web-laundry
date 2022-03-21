@@ -15,9 +15,20 @@
 @stop
 @section('content')
   <!-- Main Content -->
+                  <div class="container-fluid py-4">
                   <div class="section-body">
-                    <div class="container-fluid py-4">
                     <div class="row">
+                      <div class="col-12 col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-12 col-md-12 col-lg-12">
+                              <div class="card">
+                                <div class="card-header">
+                                  <h4>Tambah Data User</h4>
+                                </div>
+                      <form action="{{route('update-user',Auth()->user()->id)}}" method="POST">
+                        @csrf
+                        @method('put')
+                        <div class="card-body">
                       <div class="form-group col-md-6 col-12">
                         <label>Nama</label>
                         <input type="text" class="form-control" name="name"
@@ -39,7 +50,7 @@
 
                       </div>
 
-                    </div> 
+                     
                     <div class="row">
                       <div class="form-group col-md-6 col-6">
                         <label>Email</label>
@@ -64,7 +75,7 @@
                       
                       <div class="form-group col-md-6 col-6">
                         <label>Password</label>
-                        <input type="password" class="form-control" placeholder="Kosongi password jika tidak diubah." name="password" value="{{old('password')}}">
+                        <input type="password" class="form-control" placeholder="opsional" name="password" value="{{old('password')}}">
                       </div>
                       </div>
                       <div class="row">
@@ -90,21 +101,23 @@
                         
                       </div>
                     </div>
-                  </div>
-
                     
+                      <button class="btn btn-success bnt-gradient" type="submit">Simpan</button>
+                      <a href="{{route('tampil-user')}}" class="btn btn-danger btn-gradient">Back</a>
                     
-                    <div class="card-footer text-left">
-                      <a href="{{route('tampil-user')}}" class="btn btn-primary">Back</a>
-                      <button class="btn btn-info" type="submit">Simpan</button>
+                      </div>
                     </form>
-                    </div>
+                    
+                  </div>
+                </div>
+                  </div>
                   </div>
             </div>
           </div>
         </div>
       </div>
   </div>
+</div>
   
 @stop
 

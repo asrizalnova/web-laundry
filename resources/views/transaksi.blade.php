@@ -1,44 +1,24 @@
 @extends('layouts.master')
-@section('link')
-<li class="menu-header">Dashboard</li>
-<li ><a class="nav-link" href="{{route ('dashboard')}}"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
-<li class="menu-header">Content</li>
-@if (auth()->user()->role=="admin") 
-<li ><a class="nav-link" href="{{route ('tampil-outlet')}}"><i class="fas fa-home"></i> <span>Outlet</span></a></li>
-<li ><a class="nav-link" href="{{route ('tampil-paket')}}"><i class="fas fa-box"></i> <span>Paket Laundry</span></a></li>
-@endif
-@if (auth()->user()->role != "owner") 
-<li ><a class="nav-link" href="{{route ('tampil-member')}}"><i class="fas fa-user"></i> <span>Member</span></a></li>
-@endif
-<li class="active"><a class="nav-link" href="{{route ('tampil-transaksi')}}"><i class="fas fa-file-invoice-dollar"></i> <span>Transaksi</span></a></li>
-@if (auth()->user()->role=="admin") 
-<li ><a class="nav-link" href="{{route ('tampil-user')}}"><i class="fas fa-user-tie"></i> <span>Data Pengurus</span></a></li>
-@endif
+@section('navigasi')
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+<li class="breadcrumb-item text-sm"><a class="opacity-5 text-black" href="{{route('dashboard')}}">Dashboard</a></li>
+    <li class="breadcrumb-item text-sm text-black active" aria-current="page">Transaksi</li>
+  </ol>
+  <h6 class="font-weight-bolder text-dark mb-0">Data Transaksi</h6>
+</nav>
 @stop
 @section('content')
 <div class="section-header">
-    <h1>Transaksi Laundry</h1>
-    <div class="section-header-breadcrumb">
-      <div class="breadcrumb-item active"><a href="{{route('dashboard')}}">Dashboard</a></div>
-      <div class="breadcrumb-item"><a href="{{route('tampil-transaksi')}}">Transaksi</a></div>
-      <div class="breadcrumb-item">Data Transaksi</div>
-    </div>
-  </div>
+
     <div class="section-body">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
-              @if (auth()->user()->role != "owner") 
-                <a href="{{route ('tambah-transaksi')}}" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Tambah Data</a>
-                @endif
-                <a href="#" class="btn btn-icon icon-left btn-success"><i class="fas fa-clipboard-list"></i> Export Data</a>
-                <hr>
+              <div class="container-fluid py-4">
                 {{-- message simpan data --}}
                 @if (session('message-simpan'))
                 <div class="alert alert-success alert-dismissible show fade">
                   <div class="alert-body">
-                    <button class="close" data-dismiss="alert">
-                      <span>×</span>
-                    </button>
                     {{(session('message-simpan'))}}
                   </div>
                 </div>
@@ -47,9 +27,6 @@
                 @if (session('message-update'))
                 <div class="alert alert-info alert-dismissible show fade">
                   <div class="alert-body">
-                    <button class="close" data-dismiss="alert">
-                      <span>×</span>
-                    </button>
                     {{(session('message-update'))}}
                   </div>
                 </div>
@@ -58,56 +35,74 @@
                 @if (session('message-hapus'))
                 <div class="alert alert-warning alert-dismissible show fade">
                   <div class="alert-body">
-                    <button class="close" data-dismiss="alert">
-                      <span>×</span>
-                    </button>
                     {{(session('message-hapus'))}}
                   </div>
                 </div>
+                </div>
                 @endif
-                <table class="table table-striped table-bordered">
-                  <tr>
-                    <th>No</th>
-                    <th>Outlet</th>
-                    <th>Nama Member</th>
-                    <th>Tanggal Transaksi</th>
-                    {{-- <th>Batas Waktu</th>
-                    <th>Tanggal Bayar</th>
-                    <th>Status</th>
-                    <th>Pembayaran</th> --}}
-                    <th>Aksi</th>
-                  </tr>
-                  
-                  @foreach ($transaksi as $no => $data)
-                  
-                  <tr>
-                    <td>{{$transaksi->firstItem()+$no}}</td>
-                    <td>{{$data->nama}}</td>
-                    <td>{{$data->nama_member}}</td>
-                    <td>{{$data->tgl}}</td>
-                    {{-- <td>{{$data->batas_waktu}}</td>
-                    <td>{{$data->tgl_bayar}}</td>
-                    <td>{{$data->status}}</td>
-                    <td>{{$data->dibayar}}</td> --}}
-                    
-                    <td>
-                      <a href=" {{route('tampil-detail',$data->id_transaksi)}}" class="btn btn-icon btn-success" ><i class="fas fa-eye"></i><a>
-                        @if (auth()->user()->role != "owner") 
-                        <a href="{{route('edit-transaksi',$data->id_transaksi)}}" class="btn btn-icon btn-primary"><i class="far fa-edit"></i></a>
-                        <a href="#" data-id="{{$data->id_transaksi}}" class="btn btn-icon btn-danger hapus">
-                        <form action="{{route('hapus-transaksi',$data->id_transaksi)}}" id="hapus{{$data->id_transaksi}}"method="POST">
-                          @csrf
-                          @method('delete')
-                        </form>
-                        <i class="fas fa-times"></i>
-                      </a>
-                      @endif
-                    </td>
-                  </tr>
-                  @endforeach
+                <div class="container-fluid py-4">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="card mb-4">
+                        <div class="card-header pb-0">
+                          <center>
+                            <h4>Data Transaksi</h4>
+                          </center>
+                          @if (auth()->user()->role !="owner") 
+                          <a href="{{route ('tambah-transaksi')}}" class="btn btn-icon icon-left btn-success btn-gradient"><i class="far fa-edit"></i> Tambah Data</a>
+                          @endif
+                        </div>
+                        <div class="card-body px-0 pt-0 pb-2">
+                          <div class="table-responsive p-0">
+                            <table class="table align-items-center mb-0">
+                              <thead>
+                                <tr>
+                                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">No.</th>
+                                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10 ps-2">Outlet</th>
+                                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">Nama Member</th>
+                                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">Tanggal Transaksi</th>
+                                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">Aksi</th>
+                                  <th class="text-secondary opacity-10"></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                @foreach($transaksi as $no => $data) 
+                                <tr>
+                                  <td class="align-middle text-center text-sm">
+                                    <p class="text-s font-weight-bold mb-0">{{$i=$no+1, $i++}}</p>
+                                  </td>
+                                  <td class="text-center">
+                                    <span class="badge badge-sm bg-gradient-info">{{$data->nama}}</span>
+                                  </td>
+                                  <td class="align-middle text-center text-sm">
+                                    <p class="text-xs font-weight-bold mb-0">{{$data->nama_member}}</p>
+                                  </td>
+                                  <td class="align-middle text-center">
+                                    <span class="text-secondary text-xs font-weight-bold">{{$data->tgl}}</span>
+                                  </td>
+                                  <td class="align-middle text-center">
+                                    <a href=" {{route('tampil-detail',$data->id_transaksi)}}" class="btn btn-icon btn-warning btn-gradientp" ><i class="fas fa-eye"></i><a>
+                                      @if (auth()->user()->role != "owner") 
+                                    <a href="{{route('edit-transaksi',$data->id)}}" class="btn btn-icon btn-success"><i class="far fa-edit"></i></a>
+                                    <a href= "#"data-id="{{$data->id}}" class="btn btn-icon btn-danger hapus"><i class="fas fa-times">
+                                     <form action="{{route('hapus-transaksi',$data->id)}}" id="hapus{{$data->id}}"method="POST"> 
+                                        @csrf
+                                        @method('delete')
+                                    </form>
+                                  </i>
+                                  </a>
+                                  @endif
+                                  </td>
+                                </tr>
+                                @endforeach
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-                </table>
-                {{$transaksi->links()}}
             </div>
          </div>
 

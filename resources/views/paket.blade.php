@@ -2,10 +2,10 @@
 @section('navigasi')
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
-    <li class="breadcrumb-item text-sm text-white active" aria-current="page">Paket</li>
+   <li class="breadcrumb-item text-sm"><a class="opacity-5 text-black" href="{{route('dashboard')}}">Dashboard</a></li>
+    <li class="breadcrumb-item text-sm text-black active" aria-current="page">Paket</li>
   </ol>
-  <h6 class="font-weight-bolder text-white mb-0">Data Paket</h6>
+  <h6 class="font-weight-bolder text-black mb-0">Data Paket</h6>
 </nav>
 @stop
 @section('content')
@@ -48,7 +48,7 @@
                           <center>
                             <h4>Data Paket</h4>
                           </center>
-                          <a href="{{route ('tambah-paket')}}" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Tambah Data</a>
+                          <a href="{{route ('tambah-paket')}}" class="btn btn-icon icon-left btn-success btn-gradient"><i class="far fa-edit"></i> Tambah Data</a>
                           
                         </div>
                         <div class="card-body px-0 pt-0 pb-2">
@@ -72,7 +72,7 @@
                                     <p class="text-s font-weight-bold mb-0">{{$i=$no+1, $i++}}</p>
                                   </td>
                                   <td class="text-center">
-                                    <span class="badge badge-sm bg-gradient-secondary ">{{$data->nama}}</span>
+                                    <span class="badge badge-sm bg-gradient-info   ">{{$data->nama}}</span>
                                   </td>
                                   <td class="align-middle text-center text-sm">
                                     <p class="text-xs font-weight-bold mb-0">{{$data->jenis}}</p>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,16 +28,18 @@
       </div>
     </div>
   </div>
-  <main class="main-content  mt-0">
-    <div class="page-header align-items-start min-vh-100" style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');">
+  <main class="main-content  mt-0 ">
+    <div class="page-header align-items-start min-vh-100" style="background-image: url('https://images.unsplash.com/photo-1545173168-9f1947eebb7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80');">
       <span class="mask bg-gradient-dark opacity-6"></span>
-      <div class="container my-auto">
+      <div class="text-center container my-auto">
         <div class="row">
           <div class="col-lg-4 col-md-8 col-12 mx-auto">
             <div class="card z-index-0 fadeIn3 fadeInBottom">
+             
+              <br>
               <h5>Easy Wash<h/5>
-
-              
+              <br>
+              <br>
 
               <div class="card-body">
                   <form method="POST" action="{{route('login')}}" role="form">
@@ -46,29 +47,28 @@
                     <div class="wrap-input100 validate-input m-b-16">
                       <input type="email" class="form-control form-control-lg" name="email" placeholder="Email" aria-label="Email">
                     </div>
+
+                    <br>
+
                     <div class="wrap-input100 validate-input m-b-16">
                       <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" aria-label="Password">
                     </div>
 
                     @if(session('message'))
-                    <div class="text-danger">
+                    <div class="text-right text-danger">
                       {{session('message')}}
                     </div>
                   @endif
                     <div class="text-center">
                       <button type="submit" class="btn btn-lg btn-success btn-gradient btn-lg w-100 mt-4 mb-0">Log in</button>
                     </div>
+                    <br>   
                   </form>
                 </div>
-
-                  
-      
                   </form>
                 </div>
-               
               </div>
             </div>
-            
           </div>
         </div>
       </div>
