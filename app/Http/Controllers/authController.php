@@ -89,8 +89,8 @@ class authController extends Controller
     $validator = $request->validate([
         'name' => 'required|string|max:100',
         'role'=>'required|string',
-        'required|unique:user,email,$id',
-        // 'password'=>'required',
+        // 'email' =>'required',
+        'password'=>'required',
         
         
         ],
@@ -100,10 +100,10 @@ class authController extends Controller
             
             'role.required' => 'Role tidak boleh kosong!',
 
-            'email.required' => 'Alamat email tidak boleh kosong!',
-            'email.unique' => 'Alamat email telah digunakan!',
+            // 'email.required' => 'Alamat email tidak boleh kosong!',
+            // 'email.unique' => 'Alamat email telah digunakan!',
 
-            // 'password.required' => 'Password tidak boleh kosong!',
+            'password.required' => 'Password tidak boleh kosong!',
 
 
         ]
@@ -111,34 +111,12 @@ class authController extends Controller
     $user = User::where('id',$id)->update([
                 'name'=>$request->get('name'),
                 'role'=>$request->get('role'),
-                'email'=>$request->get('email'),
+                // 'email'=>$request->get('email'),
                 'password'=> bcrypt($request->get('password')),
                 'remember_token' => Str::random(60),
-
-                // Input Gambar
-                'gambar' => $request->get->file('gambar'),
-                $name = 'gambar'->getClientOriginalName(),
-                $gambar->move('images/post', $name),
-                $post->gambar = $name,
-                
             ]);
-
-    // $post = new User();
-    // $post->name = $request->name;
-    // $post->role = $request->role;
-    // $post->email = $request->email;
-    // $post->password = Hash::make($request->password);
-    
-    // // Input Gambar
-    // if($request->file('gambar')){
-    //     $gambar = $request->file('gambar');
-    //     $name = $gambar->getClientOriginalName();
-    //     $gambar->move('images/post', $name);
-    //     $post->gambar = $name;
-    // }
-    // $post->update();    
             
-     return redirect()->route('edit-user',$id)->with('message-update','Data berhasil diupdate!');
+     return redirect()->route('tampil-user',$id)->with('message-update','Data berhasil diupdate!');
 }
 
     //hapus data user

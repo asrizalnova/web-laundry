@@ -223,8 +223,8 @@
                           </label>
                           </div>
 
-                          <button class="btn btn-success btn-gradient" type="submit">Simpan</button>
                           <button class="btn btn-danger btn-gradient" type="reset">Reset</button>
+                          <button class="btn btn-success btn-gradient" type="submit">Simpan</button>
                         
                   </div>
                         </form>

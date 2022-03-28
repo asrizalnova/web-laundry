@@ -6,12 +6,12 @@
         <span class="ms-1 text-light font-weight-bold">EASY WASH</span>
       </a>
     </div>
-    
+    <hr class="horizontal light mt-0 mb-2">
     <div class="stylecollapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
 
       <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs text-light font-weight-bolder opacity-15">CONTENT</h6>
+          <h6 class="ps-4 ms-2 text-uppercase text-xs text-light font-weight-bolder opacity-15">MAIN MENU</h6>
         </li>
         
         <li class="nav-item">
@@ -33,6 +33,7 @@
           </a>
         </li>
         @endif
+
         @if (auth()->user()->role=="admin")  
         <li class="nav-item">
           <a class="nav-link " href="{{route('tampil-paket')}}">
@@ -43,6 +44,7 @@
           </a>
         </li>
         @endif
+        
         @if (auth()->user()->role != "owner")  
         <li class="nav-item">
           <a class="nav-link " href="{{route('tampil-member')}}">
@@ -62,6 +64,12 @@
             <span class="nav-link-text text-light  ms-1">Transaksi</span>
           </a>
         </li>
+          
+        @if (auth()->user()->role=="admin")
+        <li class="nav-item mt-3">
+          <h6 class="ps-4 ms-2 text-uppercase text-xs text-light font-weight-bolder opacity-15">SETTING</h6>
+        </li>
+        @endif
 
         @if (auth()->user()->role=="admin")  
         <li class="nav-item">
@@ -70,10 +78,8 @@
               <i class="ni ni-badge text-light text-sm opacity-10"></i>
             </div>
             <span class="nav-link-text text-light ms-1">Kelola Akun</span>
-            
           </a>
         </li> 
-
         @endif
       </ul>
     </div>

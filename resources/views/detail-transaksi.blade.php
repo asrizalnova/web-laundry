@@ -30,37 +30,37 @@
 
                           <table class="table">
                             <tr>
-                              <th>Outlet</th>
-                              <th>Nama Member</th>
-                              <th>Jenis Paket</th>
-                              <th>Berat</th>
-                              <th>Total harga</th>
-                              <th>Tanggal Transaksi</th>
-                              <th>Batas Waktu</th>
-                              <th>Tanggal Bayar</th>
-                              <th>Status</th>
-                              <th>Pembayaran</th>
+                              <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">Outlet</th>
+                              <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">Nama Member</th>
+                              <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">Jenis Paket</th>
+                              <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">Berat</th>
+                              <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">Total harga</th>
+                              <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">Tanggal Transaksi</th>
+                              <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">Batas Waktu</th>
+                              <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">Tanggal Bayar</th>
+                              <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">Status</th>
+                              <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">Pembayaran</th>
                             </tr>
                             
                             
                             <tr>
-                              {{-- <td>{{$detail->firstItem()+$no}}</td> --}}
+                              {{-- <td class="align-middle text-center text-sm">{{$detail->firstItem()+$no}}</td> --}}
                               @foreach ($outlet as $outlets)
-                              <td>{{$outlets->nama}}</td>
+                              <td class="align-middle text-center text-sm">{{$outlets->nama}}</td>
                               @endforeach
                               @foreach ($member as $members)
-                              <td>{{$members->nama_member}}</td>
+                              <td class="align-middle text-center text-sm">{{$members->nama_member}}</td>
                               @endforeach
                               @foreach ($paket as $pakets)
-                              <td>{{$pakets->nama_paket}}</td>
+                              <td class="align-middle text-center text-sm">{{$pakets->nama_paket}}</td>
                               @endforeach
-                              <td>{{$transaksi->qty}} Kg</td>
-                              <td>Rp. {{$detail->subtotal}}</td>
-                              <td>{{$transaksi->tgl}}</td>
-                              <td>{{$transaksi->batas_waktu}}</td>
-                              <td>{{$transaksi->tgl_bayar}}</td>
-                              <td>{{$transaksi->status}}</td>
-                              <td>{{$transaksi->dibayar}}</td>
+                              <td class="align-middle text-center text-sm">{{$transaksi->qty}} Kg</td>
+                              <td class="align-middle text-center text-sm">Rp. {{$detail->subtotal}}</td>
+                              <td class="align-middle text-center text-sm">{{$transaksi->tgl}}</td>
+                              <td class="align-middle text-center text-sm">{{$transaksi->batas_waktu}}</td>
+                              <td class="align-middle text-center text-sm">{{$transaksi->tgl_bayar}}</td>
+                              <td class="align-middle text-center text-sm">{{$transaksi->status}}</td>
+                              <td class="align-middle text-center text-sm">{{$transaksi->dibayar}}</td>
                             </tr>
                             
                             {{-- <td>{{$data->nama}}</td>
@@ -76,7 +76,7 @@
                         </div>
                         <div class="card-footer text-left">
                           <a href="{{route('tampil-transaksi')}}" class="btn btn-danger btn-gradient">Back</a>
-                          <a href="{{route('laporan',$transaksi->id)}}" class="btn btn-success btn-gradient">Generate Laporan</a>
+                          <a href="{{route('laporan',$transaksi->id )}}" target="_blank" class="btn btn-success btn-gradient">Generate Laporan</a>
                         </div>
 
                       </div>                
