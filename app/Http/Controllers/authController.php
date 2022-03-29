@@ -29,7 +29,7 @@ class authController extends Controller
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
             return redirect('/dashboard');
         }
-        return redirect('/')->with('message','Email atau password salah!');
+        return redirect('/')->with('message','Email atau password salah');
 }
     //tampil data user
     public function tampil(){
@@ -131,3 +131,116 @@ class authController extends Controller
     }
 
 }
+
+// public function store(Request $request)
+    // {
+    // 	$validator = Validator::make($request->all(), [
+    //         'id_outlet' => 'required',
+    //         'id_member' => 'required|string',
+    //         'id_paket' => 'required|string',
+    //         'qty' => 'required|min:1',
+    //         'tgl'=>'required',
+    //         'batas_waktu'=>'required',
+    //         'tgl_bayar'=>'',
+    //         'status'=>'required',
+    //         'dibayar'=>'required',
+    //     ]);
+    //     if($validator->fails()){
+    //         return response()->json($validator->errors()->toJson(), 400);
+    //     }        
+        
+    //     $transaksi = Transaksi::create([
+    //         'id_outlet'=>$request->get('id_outlet'),
+    //         'id_member'=>$request->get('id_member'),
+    //         'id_paket'=>$request->get('id_paket'),
+    //         'qty'=>$request->get('qty'),
+    //         'tgl'=>$request->get('tgl'),
+    //         'batas_waktu'=>$request->get('batas_waktu'),
+    //         'tgl_bayar'=>$request->get('tgl_bayar'),
+    //         'status'=>$request->get('status'),
+    //         'dibayar'=>$request->get('dibayar'),
+    //         ]);
+            
+    //         $id = $request->get('id_paket');
+    //         $paket = Paket::all()->find($id);
+    
+    //         $detail = detail_transaksi::create([
+    //         'id_transaksi' => $transaksi->id,
+    //         'subtotal' => $transaksi->qty * $paket->harga,
+    //         'keterangan' => '',
+    //         ]);
+            
+    //     if($transaksi && $detail){
+    //     	return response()->json(['status'=>'berhasil tambah data']);
+    //     } else {
+    //     	return response()->json(['status'=>false]);
+    //     }
+    // }
+    // public function upd(Request $request, $id)
+    // {
+    //     $validator = $request->validate([
+    //         'id_outlet' => 'required',
+    //         'id_member' => 'required|string',
+    //         'id_paket' => 'required|string',
+    //         'qty' => 'required|min:1',
+    //         'tgl'=>'required',
+    //         'batas_waktu'=>'required',
+    //         'tgl_bayar'=>'',
+    //         'status'=>'required',
+    //         'dibayar'=>'required',
+    //         ],
+    //         [
+    //             'id_outlet.required' => 'Outlet tidak boleh kosong!',
+    //             'id_member.required' => 'Nama member tidak boleh kosong!',
+    //             'id_paket.required' => 'Jenis paket tidak boleh kosong!',
+    //             'qty.required' => 'Berat tidak boleh kosong!',
+    //             'qty.min' => 'Berat minimal min:! kg',
+    //             'tgl.required' => 'Tanggal transaksi tidak boleh kosong!',
+    //             'batas_waktu.required' => 'Batas waktu tidak boleh kosong!',
+    //             'status.required' => 'Status tidak boleh kosong!',  
+    //             'dibayar.required' => 'Status bayar tidak boleh kosong!',  
+    //         ]
+    //     );
+    //     $transaksi = Transaksi::where('id',$id)->update([
+    //         'id_outlet'=>$request->get('id_outlet'),
+    //         'id_member'=>$request->get('id_member'),
+    //         'id_paket'=>$request->get('id_paket'),
+    //         'qty'=>$request->get('qty'),
+    //         'tgl'=>$request->get('tgl'),
+    //         'batas_waktu'=>$request->get('batas_waktu'),
+    //         'tgl_bayar'=>$request->get('tgl_bayar'),
+    //         'status'=>$request->get('status'),
+    //         'dibayar'=>$request->get('dibayar'),
+    //             ]);
+
+    //         $id_paket = $request->get('id_paket');
+    //         $paket = Paket::all()->find($id_paket);
+
+    //         $detail = detail_transaksi::where('id_transaksi',$id)->update([
+    //         'id_transaksi' => $id,
+    //         'subtotal' => $request->get('qty') * $paket->harga,
+    //         'keterangan' => '',
+    //         ]);
+    //     if($transaksi && $detail){
+    //     	return response()->json(['status'=>'Berhasil Menambahkan data']);
+    //     } else {
+    //     	return response()->json(['status'=>false]);
+    //     }
+    // }
+    // public function delete($id)
+    // {
+    //     $delete = Detail_Transaksi::where('id_transaksi',$id)->delete();
+    //     $delete = Transaksi::where('id',$id)->delete();
+
+    //     if ($delete) {
+    //         return response()->json([
+    //             'success' => true,
+    //             'message' => 'Data Transaksi Berhasil Dihapus',
+    //         ]);
+    //     } else {
+    //         return response()->json([
+    //             'success' => false,
+    //             'message' => 'Data Transaksi Gagal Dihapus'
+    //         ]);
+    //     }
+    // }

@@ -74,8 +74,6 @@
                       </div>
                       </div>
                       
-                     
-                      
                       <div class="row">
                          <div class="form-group col-md-6 col-6">
                         <label>Password</label>
@@ -112,9 +110,9 @@
                         @else
                         value="{{$user->role}}" 
                         @endif
-
                         hidden>
                       </div>  
+                    
                       <div class="card-footer text-left">
                       <a href="{{route('tampil-user')}}" class="btn btn-danger btn-gradient">Back</a>
                       <button class="btn btn-success btn-gradient" type="submit">Simpan</button>
@@ -123,7 +121,6 @@
 
                     </form>
                 </div>
-</div>
 @stop
 
 

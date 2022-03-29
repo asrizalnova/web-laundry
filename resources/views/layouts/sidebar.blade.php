@@ -1,23 +1,21 @@
-<aside class="sidenav navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main" style="background-color:#343435"  >
+<aside class="sidenav navbar-vertical navbar-expand-xs border-20  my-20 fixed-start ms-30 " id="sidenav-main"  style="background-color:#343435"  >
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-light opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href="{{route('dashboard')}}">
         <img src="{{asset('/assets2/img/logoku.png')}}" class="navbar-brand-img h-100" alt="main_logo">
-        <span class="ms-1 text-light font-weight-bold">EASY WASH</span>
+        <span class="ms-1 text-light font-weight-bold">Laundry Sawahan</span>
       </a>
     </div>
     <hr class="horizontal light mt-0 mb-2">
     <div class="stylecollapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
 
-      <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs text-light font-weight-bolder opacity-15">MAIN MENU</h6>
-        </li>
+      
         
         <li class="nav-item">
           <a class="nav-link" href="{{route('dashboard')}}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center" >
-              <i class="ni ni-tv-2 text-light text-sm opacity-10"></i>
+              <i class="ni ni-shop text-light text-sm opacity-10"></i>
             </div>
             <span class="nav-link-text text-light ms-1">Dashboard</span>
           </a>
@@ -27,7 +25,7 @@
         <li class="nav-item">
           <a class="nav-link " href="{{route('tampil-outlet')}}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center" >
-              <i class="ni ni-istanbul text-light text-sm opacity-10"></i>
+              <i class="ni ni-collection text-light text-sm opacity-10"></i>
             </div>
             <span class="nav-link-text text-light ms-1">Outlet</span>
           </a>
@@ -38,7 +36,7 @@
         <li class="nav-item">
           <a class="nav-link " href="{{route('tampil-paket')}}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-box-2 text-light text-sm opacity-10"></i>
+              <i class="ni ni-tag text-light text-sm opacity-10"></i>
             </div>
             <span class="nav-link-text text-light ms-1">Paket</span>
           </a>
@@ -59,17 +57,13 @@
         <li class="nav-item">
           <a class="nav-link " href="{{route('tampil-transaksi')}}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-money-coins text-light text-sm opacity-10"></i>
+              <i class="ni ni-cart text-light text-sm opacity-10"></i>
             </div>
             <span class="nav-link-text text-light  ms-1">Transaksi</span>
           </a>
         </li>
           
-        @if (auth()->user()->role=="admin")
-        <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs text-light font-weight-bolder opacity-15">SETTING</h6>
-        </li>
-        @endif
+        
 
         @if (auth()->user()->role=="admin")  
         <li class="nav-item">
@@ -77,7 +71,7 @@
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center" >
               <i class="ni ni-badge text-light text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text text-light ms-1">Kelola Akun</span>
+            <span class="nav-link-text text-light ms-1">User</span>
           </a>
         </li> 
         @endif

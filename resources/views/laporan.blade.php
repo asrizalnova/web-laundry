@@ -82,14 +82,6 @@
 </div>
 
 
-<div class="col-md-5 peraturan">
-    <ol type="1">
-        <li>Nota wajib dibawa saat pengambilan</li>
-        <li>Customer wajib memastikan bahwa laundry sudah benar</li>
-        <li>Barang yang tidak di ambil atau di titipkan lebih dari 14 hari bukan tanggung jawab kami lagi</li>
-        <li>Jika terjadi kerusakan yang di akibatkan oleh kami, customer berhak mendapat ganti rugi</li>
-    </ol>
-</div>
 
 
 
@@ -102,7 +94,7 @@
 
 
 <div class="col-md-3">
-    Hormat Kami,
+    <p align="center">Hormat Kami</p>
     <br>
     <br>
     <br>
@@ -114,7 +106,7 @@
 
 </div>
 <div class="col-md-3">
-    Penerima,
+    <p align="center">Penerima</p>
     <br>
     <br>
     <br>

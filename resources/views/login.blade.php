@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../assets2/img/logoku.png">
   <link rel="icon" type="image/png" href="../assets2/img/logoku.png">
   <title>
-    Login - Easy Wash
+    Login
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -29,7 +29,7 @@
     </div>
   </div>
   <main class="main-content  mt-0 ">
-    <div class="page-header align-items-start min-vh-100" style="background-image: url('https://images.unsplash.com/photo-1545173168-9f1947eebb7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80');">
+    <div class="page-header align-items-start min-vh-100" >
       <span class="mask bg-gradient-dark opacity-6"></span>
       <div class="text-center container my-auto">
         <div class="row">
@@ -37,7 +37,7 @@
             <div class="card z-index-0 fadeIn3 fadeInBottom">
              
               <br>
-              <h5>Easy Wash<h/5>
+              <h5>Laundry Sawahan<h/5>
               <br>
               <br>
 
@@ -60,7 +60,7 @@
                     </div>
                   @endif
                     <div class="text-center">
-                      <button type="submit" class="btn btn-lg btn-success btn-gradient btn-lg w-100 mt-4 mb-0">Log in</button>
+                      <button type="submit" class="btn btn-lg btn-info btn-gradient btn-lg w-100 mt-4 mb-0">Login</button>
                     </div>
                     <br>   
                   </form>

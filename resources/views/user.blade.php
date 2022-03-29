@@ -1,11 +1,6 @@
 @extends('layouts.master')
 @section('navigasi')
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-   <li class="breadcrumb-item text-sm"><a class="opacity-5 text-black" href="{{route('dashboard')}}">Dashboard</a></li>
-    <li class="breadcrumb-item text-sm text-black active" aria-current="page">Kelola Akun</li>
-  </ol>
-  <h6 class="font-weight-bolder text-black mb-0">Kelola Akun</h6>
+  <h3 class="font-weight-bolder text-black mb-0">User</h3>
 </nav>
 @stop
 @section('content')
@@ -46,9 +41,9 @@
                       <div class="card mb-4">
                         <div class="card-header pb-0">
                           <center>
-                            <h4>Kelola Akun</h4>
+                            <h4>User</h4>
                           </center>
-                          <a href="{{route ('tambah-user')}}" class="btn btn-icon icon-left btn-success btn-gradient"><i class="far fa-edit"></i> Tambah Data</a>
+                          <a href="{{route ('tambah-user')}}" class="btn btn-icon icon-left btn-primary btn-gradient"><i></i> Tambah Data</a>
                           
                         </div>
                         <div class="card-body px-0 pt-0 pb-2">
@@ -71,7 +66,7 @@
                                     <p class="text-s font-weight-bold mb-0">{{$i=$no+1, $i++}}</p>
                                   </td>
                                   <td class="text-center">
-                                    <span class="badge badge-sm bg-gradient-info ">{{$data->name}}</span>
+                                    <span >{{$data->name}}</span>
                                   </td>
                                   <td class="align-middle text-center text-sm">
                                     <p class="text-xs font-weight-bold mb-0">{{$data->role}}</p>
@@ -80,8 +75,8 @@
                                     <span class="text-secondary text-xs font-weight-bold">{{$data->email}}</span>
                                   </td>
                                   <td class="align-middle text-center">
-                                    <a href="{{route('edit-user',$data->id)}}" class="btn btn-icon btn-success"><i class="far fa-edit"></i></a>
-                                    <a href= "#"data-id="{{$data->id}}" class="btn btn-icon btn-danger hapus"><i class="fas fa-times">
+                                    <a href="{{route('edit-user',$data->id)}}" class="btn btn-icon btn-success"><i>edit</i></a>
+                                    <a href= "#"data-id="{{$data->id}}" class="btn btn-icon btn-danger hapus">hapus<i >
                                      <form action="{{route('hapus-user',$data->id)}}" id="hapus{{$data->id}}"method="POST"> 
                                         @csrf
                                         @method('delete')
@@ -114,16 +109,15 @@ $(".hapus").click(function(hapus) {
   id = hapus.target.dataset.id;
   swal({
       title: 'Hapus data?',
-      text: 'Data yang dihapus tidak bisa dikembalikan!',
       icon: 'warning',
       buttons: true,
       dangerMode: true,
     })
     .then((willDelete) => {
       if (willDelete) {
-      // swal('Poof! Your imaginary file has been deleted!', {
-      //   icon: 'success',
-      // });
+      swal('Data Sukses terhapus', {
+        icon: 'success',
+      });
       $(`#hapus${id}`).submit();
       } else {
       // swal('Your imaginary file is safe!');

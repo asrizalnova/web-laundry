@@ -30,6 +30,10 @@ class detailController extends Controller
         $detail = DB::table('detail_transaksi')->where('id_transaksi', $id)->first();
         return view('laporan', compact('transaksi','outlet','member','paket','detail',));
 
+        // $transaksis = Transaksi::all();
+ 
+    	// $pdf = PDF::loadview('transaksi.transaksi_pdf',['transaksis'=>$transaksis]);
+    	// return $pdf->download('laporan-transaksi-pdf');
         }
 
 }
